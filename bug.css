@@ -1,0 +1,21 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors:
+
+```css
+div {
+  color: blue;
+}
+
+.container div {
+  color: red;
+}
+
+#myDiv {
+  color: green;
+}
+
+#myDiv.container {
+  color: purple; /* This will override the more specific #myDiv selector */
+}
+```
+
+In this example, the `#myDiv.container` selector has a higher specificity than `#myDiv`, even though it seems counter-intuitive.  The reason is that the class selector `.container` adds to the specificity of the ID selector `#myDiv`. This can be confusing because ID selectors are usually highly specific. This can be an uncommon source of error, particularly for developers who are not completely aware of the intricacies of CSS specificity.
